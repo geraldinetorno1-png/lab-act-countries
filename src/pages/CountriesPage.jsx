@@ -8,12 +8,9 @@ const CountriesPage = () => {
         {COUNTRIES.map((c) => (
           <div key={c.code} className="card bg-base-100 shadow">
             <div className="card-body">
-              <div className="flex items-center gap-3">
-                <span className="text-4xl">{c.flag}</span>
-                <div>
-                  <h2 className="card-title">{c.name}</h2>
-                  <p className="text-sm opacity-70">{c.capital}</p>
-                </div>
+              <div>
+                <h2 className="card-title">{c.name}</h2>
+                <p className="text-sm opacity-70">{c.capital}</p>
               </div>
               <div className="flex gap-2 mt-2">
                 <span className="badge badge-primary">{c.region}</span>
