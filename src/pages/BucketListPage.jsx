@@ -16,8 +16,6 @@ const BucketListPage = () => {
               <span className="text-5xl">{c.flag}</span>
               <div>
                 <h2 className="card-title">{c.name}</h2>
-                <p className="text-sm opacity-70">Capital: {c.capital}</p>
-                <span className="badge badge-primary mt-1">{c.region}</span>
               </div>
             </div>
           </div>
