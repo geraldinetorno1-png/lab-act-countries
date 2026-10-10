@@ -1,14 +1,24 @@
-import { Link, useLocation } from "react-router";
+import { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router";
 import COUNTRIES from "../data/countries";
 
 const CountriesPage = () => {
-  const { state } = useLocation();
+  const { pathname, state } = useLocation();
+  const navigate = useNavigate();
+  // Keep the notice visible while clearing it from browser history.
+  const [notice] = useState(state?.missingCode ?? null);
+
+  useEffect(() => {
+    if (state?.missingCode) {
+      navigate(pathname, { replace: true, state: null });
+    }
+  }, [state, pathname, navigate]);
 
   return (
     <div className="max-w-4xl mx-auto">
-      {state?.missingCode && (
+      {notice && (
         <div className="alert alert-warning mb-4" role="alert">
-          <span>We don't have a country with code "{state.missingCode}".</span>
+          <span>We don't have a country with code "{notice}".</span>
         </div>
       )}
       <h1 className="text-3xl font-bold mb-4">Countries</h1>
