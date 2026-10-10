@@ -1,41 +1,37 @@
-# Countries of the World — Router Starter (NO ROUTING YET)
+# Countries of the World
 
-Starter project for **Lab Activity 07**. Four page components are pre-built with real content, but **React Router is not installed and not wired up**. Your job in the lab is to install `react-router` and turn this into a real multi-page app.
+React project for Front-End Development 2, Labs 07 to 09.
 
-## Getting Started
+## Run locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173).
+Open the local URL printed in the terminal.
 
-You'll see the Home page rendered inside the Layout. Clicking any nav link (`Countries`, `Bucket List`, `About`) will trigger a full-page reload and land you on a browser 404 — because those URLs aren't wired up on the client. **That's expected. Your lab task is to fix this.**
+## Pages
 
-## Current State
+- `/` — Home, with links to the country list and a random country.
+- `/countries` — Countries and their capitals.
+- `/countries/PH` — Example country detail page.
+- `/bucket-list` — A fixed list of countries to visit.
+- `/about` — Project description.
+- Other addresses show the 404 page.
 
-- `main.jsx` — renders `<App />` (no `<BrowserRouter>`)
-- `App.jsx` — renders `<Layout><HomePage /></Layout>` (no route table)
-- `Layout.jsx` — accepts `{ children }`; nav uses `<a href>` (full reloads)
-- Pages — `HomePage`, `CountriesPage`, `BucketListPage`, `AboutPage`, `NotFoundPage` all exist with full content
-- `NotFoundPage` — styled 404 with two intentional JSX bugs for you to fix
+## Lab 09
 
-## Stack
+The countries section shares a breadcrumb through `CountriesLayout`.
+`RequireValidCountry` checks the country code before rendering a detail page.
+An unknown code such as `/countries/zzz` redirects to the list with a warning.
+The redirect replaces the history entry, and refreshing the list clears the warning.
 
-- React 19
-- Vite 6
-- Tailwind CSS 4 (via `@tailwindcss/vite`)
-- DaisyUI 5
+## Build
 
-## What You'll Add in Lab 07
+```bash
+npm run build
+npm run preview
+```
 
-- Install `react-router`
-- Wrap the app in `<BrowserRouter>`
-- Build a route table with `<Routes>` + `<Route>`
-- Refactor `Layout` to a layout route with `<Outlet />`
-- Convert `<a href>` → `<Link>` for client-side navigation
-- Add a catch-all `path="*"` for the 404 page
-- Fix the two JSX bugs in `NotFoundPage`
-
-See `Lab Activity 07_ Countries of the World with React Router.md` for the full task list.
+Uses React, React Router, Vite, Tailwind CSS, and DaisyUI.

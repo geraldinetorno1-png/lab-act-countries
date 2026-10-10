@@ -12,11 +12,8 @@ const BucketListPage = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {myList.map((c) => (
           <div key={c.code} className="card bg-base-100 shadow">
-            <div className="card-body flex-row items-center gap-4">
-              <span className="text-5xl">{c.flag}</span>
-              <div>
-                <h2 className="card-title">{c.name}</h2>
-              </div>
+            <div className="card-body">
+              <h2 className="card-title">{c.name}</h2>
             </div>
           </div>
         ))}

@@ -25,8 +25,7 @@ const NotFoundPage = () => {
           Page not found
         </h1>
         <p className="mt-6 text-base leading-7 text-gray-600">
-          Sorry, we couldn't find the page you're looking for. It might have
-          been moved or deleted.
+          This address doesn't match a page in the app.
         </p>
 
         <div className="mt-10 flex items-center justify-center gap-x-6">
@@ -36,12 +35,6 @@ const NotFoundPage = () => {
           >
             Go back home
           </Link>
-          <a
-            href="#"
-            className="text-sm font-semibold text-gray-900 hover:text-indigo-600"
-          >
-            Contact support <span aria-hidden="true">&rarr;</span>
-          </a>
         </div>
       </div>
     </div>

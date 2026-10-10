@@ -16,10 +16,6 @@ const CountryDetailPage = () => {
     <div className="max-w-md mx-auto card bg-base-100 shadow p-6 text-center space-y-3">
       <h1 className="text-3xl font-bold">{country.name}</h1>
       <p className="opacity-70">Capital: {country.capital}</p>
-      <div className="flex justify-center gap-2">
-        <span className="badge badge-primary">{country.region}</span>
-        <span className="badge">{country.population.toLocaleString()} people</span>
-      </div>
       <div className="flex gap-2 justify-center pt-2">
         <button className="btn btn-ghost" onClick={() => navigate(-1)}>
           Back
